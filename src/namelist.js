@@ -1,34 +1,34 @@
 import React from "react";
 import { firstBook } from "./datamain";
+import Button from "react-bootstrap/Button";
 import Length from "./length";
 import { useState } from "react";
 const Namelist = () => {
   const [people, setPeople] = React.useState(firstBook);
-  const [counter, setstate] = useState(people.length);
+
   const removeItem = (id) => {
     let newPeople = people.filter((person) => person.id !== id);
     setPeople(newPeople);
   };
   return (
     <>
-      <h4>{counter}</h4>
+      <h1>number of birthday today {people.length}</h1>
       {people.map((person) => {
         const { id, name } = person;
 
         return (
           <div key={id} className="item">
-            <h4>
-              {console.log(people.length)}
-              {name}
-            </h4>
-            <button onClick={() => setstate(counter - 1)}>remove</button>
-            <button onClick={() => removeItem(id)}>remove</button>
+            <h4>{name}</h4>
+
+            <Button variant="danger" onClick={() => removeItem(id)}>
+              remove
+            </Button>
           </div>
         );
       })}
-      <button onClick={() => setPeople([])} variant="primary">
-        primary
-      </button>
+      <Button variant="primary" onClick={() => setPeople([])} variant="primary">
+        remove all
+      </Button>
     </>
   );
 };
