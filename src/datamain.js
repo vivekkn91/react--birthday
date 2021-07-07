@@ -14,19 +14,19 @@ export const firstBook = [
   {
     id: 3,
     pic: "https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit.jpg",
-    name: "lak",
+    name: "ramu",
     age: "male",
   },
   {
     id: 4,
     pic: "https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit.jpg",
-    name: "lak",
+    name: "raman",
     age: "male",
   },
   {
     id: 5,
     pic: "https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit.jpg",
-    name: "ram",
+    name: "kes",
     age: "male",
   },
 ];

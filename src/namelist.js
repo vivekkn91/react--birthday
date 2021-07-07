@@ -1,8 +1,7 @@
 import React from "react";
 import { firstBook } from "./datamain";
 import Button from "react-bootstrap/Button";
-import Length from "./length";
-import { useState } from "react";
+
 const Namelist = () => {
   const [people, setPeople] = React.useState(firstBook);
 
