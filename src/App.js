@@ -2,6 +2,7 @@ import "./App.css";
 import Card from "react-bootstrap/Card";
 
 import Namelist from "./namelist";
+import { Tour } from "./Tour";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           </Card.Text>
         </Card.Body>
       </Card>
+      <Tour />
     </>
   );
 }

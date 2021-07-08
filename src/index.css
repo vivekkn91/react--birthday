@@ -21,3 +21,14 @@ code {
   display: grid;
   grid-template-columns: 11fr 1fr;
 }
+.five-px {
+  height: 500px;
+}
+.grid-5 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.tourpack {
+  width: 500px;
+}
