@@ -1,5 +1,5 @@
 import React from "react";
-
+import Gorm from "./Gorm";
 import { firstBook } from "./datamain";
 import Button from "react-bootstrap/Button";
 
@@ -21,7 +21,7 @@ const Namelist = () => {
             <h4>{name}</h4>
 
             <Button variant="danger" onClick={() => removeItem(id)}>
-              remove
+              delete
             </Button>
           </div>
         );

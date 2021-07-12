@@ -32,3 +32,7 @@ code {
 .tourpack {
   width: 500px;
 }
+.loding {
+  display: flex;
+  justify-content: center;
+}
