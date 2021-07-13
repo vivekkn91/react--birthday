@@ -26,6 +26,7 @@ const Namelist = () => {
           </div>
         );
       })}
+
       <Button variant="primary" onClick={() => setPeople([])} variant="primary">
         remove all
       </Button>

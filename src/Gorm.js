@@ -5,16 +5,31 @@ import Form from "react-bootstrap/Form";
 const Gorm = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const [data, setdata] = useState([]);
+
   const formSubmit = (e) => {
     e.preventDefault();
-    console.log(email);
+    if (email && password) {
+      const personData = {
+        id: new Date().getTime().toString(),
+        email,
+        password,
+      };
+
+      setdata((data) => {
+        return [...data, personData];
+        setemail("");
+        setpassword("");
+      });
+    } else {
+      console.log("emty data");
+    }
   };
 
   return (
     <>
       <Form onSubmit={formSubmit}>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+        <Form.Group controlId="email">
           <Form.Control
             type="email"
             id="email"
@@ -25,8 +40,7 @@ const Gorm = () => {
           />
         </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+        <Form.Group controlId="password">
           <Form.Control
             id="password"
             type="password"
@@ -41,6 +55,16 @@ const Gorm = () => {
           Submit
         </Button>
       </Form>
+      <h1>number of birthday today {data.length}</h1>
+      {data.map((personData) => {
+        const { id, email, password } = personData;
+        return (
+          <div key={id} className="item">
+            <h4>{email}</h4>
+            <h4>{password}</h4>
+          </div>
+        );
+      })}
     </>
   );
 };
