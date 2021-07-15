@@ -2,27 +2,27 @@ import React from "react";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-const Gorm = () => {
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
-  const [data, setdata] = useState([]);
+const Submitreg = () => {
+  //const [email, setemail] = useState("");
+  //const [password, setpassword] = useState("");
+  const [data, setdata] = useState({ name: "", email: "" });
+  const [dataPerson, setPerson] = useState([]);
 
+  const getfield = (obj) => {
+    const name = obj.target.name;
+    const value = obj.target.value;
+    setdata({ ...data, [name]: value });
+  };
   const formSubmit = (e) => {
     e.preventDefault();
-    if (email && password) {
-      const personData = {
+    if (data.email && data.password) {
+      const dataobj = {
         id: new Date().getTime().toString(),
-        email,
-        password,
       };
 
-      setdata((data) => {
-        return [...data, personData];
-      });
-      setemail("");
-      setpassword("");
-    } else {
-      console.log("emty data");
+      setPerson([...dataPerson, dataobj, data]);
+      console.log(dataPerson);
+      setdata({ email: "", password: "" });
     }
   };
 
@@ -35,8 +35,8 @@ const Gorm = () => {
             id="email"
             placeholder="Enter email"
             name="email"
-            value={email}
-            onChange={(e) => setemail(e.target.value)}
+            value={data.email}
+            onChange={getfield}
           />
         </Form.Group>
 
@@ -46,8 +46,8 @@ const Gorm = () => {
             type="password"
             placeholder="Password"
             name="password"
-            value={password}
-            onChange={(e) => setpassword(e.target.value)}
+            value={data.password}
+            onChange={getfield}
           />
         </Form.Group>
 
@@ -55,9 +55,10 @@ const Gorm = () => {
           Submit
         </Button>
       </Form>
-      <h1>number of birthday today {data.length}</h1>
-      {data.map((personData) => {
-        const { id, email, password } = personData;
+      <h1>number of birthday today {dataPerson.length / 2}</h1>
+      {dataPerson.map((dataPerson) => {
+        const { id, email, password } = dataPerson;
+
         return (
           <div key={id} className="item">
             <h4>{email}</h4>
@@ -68,4 +69,4 @@ const Gorm = () => {
     </>
   );
 };
-export default Gorm;
+export default Submitreg;
