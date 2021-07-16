@@ -15,7 +15,6 @@ export const Tour = () => {
       setSetdata(getmydata);
     } catch (error) {
       setloader(false);
-      console.log(error);
     }
   };
   useEffect(() => {

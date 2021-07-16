@@ -55,7 +55,7 @@ const Submitreg = () => {
           Submit
         </Button>
       </Form>
-      <h1>number of birthday today {dataPerson.length / 2}</h1>
+      <h1>number of new birthday today {dataPerson.length}</h1>
       {dataPerson.map((dataPerson) => {
         const { id, email, password } = dataPerson;
 

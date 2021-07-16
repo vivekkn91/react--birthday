@@ -41,3 +41,10 @@ code {
   background: red;
   display: none;
 }
+
+.itemSet {
+  margin: 5%;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 11fr 1fr;
+}

@@ -17,7 +17,7 @@ const Namelist = () => {
         const { id, name } = person;
 
         return (
-          <div key={id} className="item">
+          <div key={id} className="itemSet">
             <h4>{name}</h4>
 
             <Button variant="danger" onClick={() => removeItem(id)}>
