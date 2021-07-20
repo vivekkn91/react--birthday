@@ -55,6 +55,7 @@ const Gorm = () => {
           Submit
         </Button>
       </Form>
+
       <h1>number of birthday today {data.length}</h1>
       {data.map((personData) => {
         const { id, email, password } = personData;
