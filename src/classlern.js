@@ -18,6 +18,9 @@ export default class Classlern extends Component {
     let textvalue = this.state.textField;
     arrayvariable.push(textvalue);
     this.setState({ arrayvariable: textvalue });
+ this.setState({
+      textField: ''
+    });
   };
 
   deletefuction = (e) => {
@@ -28,8 +31,9 @@ export default class Classlern extends Component {
   render() {
     return (
       <div>
-        <input type="text" onChange={this.textField} />{" "}
-        <button onClick={this.addbutton}>add</button>
+        <input   value={this.state.textField} onChange={this.textField} />{" "}
+        <button disabled={!this.state.textField}  onClick={this.addbutton}>add</button>
+       
         {this.state.newarray.map((itm, k) => {
           return (
             <>
